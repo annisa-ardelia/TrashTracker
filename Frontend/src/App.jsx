@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './index.css';
+import { Outlet } from "react-router-dom";
 
-function App() {
-
-  return (
-    <>
-      <div className="text-black text-2xl font-bold">
-        Trash Tracker
-      </div>
-    </>
+const App = () => {
+  return(
+    <div>
+      <Outlet />
+    </div>
   )
-}
+};
 
-export default App
+export default App;
