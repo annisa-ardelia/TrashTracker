@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "../index.js";
 import ToastContainer from "./ToastContainer"; // import the ToastContainer component
+import logo from "../assets/logo-putih.png";
 import style from "../style"; 
 import menu from "../assets/menu.svg";
 
@@ -65,8 +66,8 @@ const Navbar = () => {
           <div className="w-full flex py-6 justify-between items-center navbar">
             <a href="/">
               <img
-                // src={logo}
-                alt="Premier-League-Center"
+                src={logo}
+                alt="Trash Tracker"
                 className="w-[px] h-[50px]"
               />
             </a>
@@ -74,7 +75,7 @@ const Navbar = () => {
               {updatedNavLinks.map((nav, index) => (
                 <li
                   id={nav.id}
-                  className={`font-poppins font-normal cursor-pointer text-[16px] 
+                  className={`font-poppins cursor-pointer text-[20px] hover:font-bold
                   ${active === nav.id ? "text-white" : "text-gray-300"} 
                   ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                   onClick={() => {

@@ -1,4 +1,5 @@
 import style from "../style";
+import map from "../assets/map-putih.png";
 import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import MapPreview from "../components/mapPreview";
@@ -43,7 +44,7 @@ const MainPage = () => {
                 <Navbar />
 
                 <div className={`bg-primary ${style.flexStart}` }>
-                    <div ref={ref1} className={`${style.boxWidth} `}>
+                    <div ref={ref1} className={`${style.boxWidth}`}>
                         <Hero />
                     </div>
                 </div>
