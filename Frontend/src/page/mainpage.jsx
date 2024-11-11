@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import MapPreview from "../components/mapPreview";
 import StatistikPreview from "../components/statistikPreview";
+import Footer from "../components/footer";
 import { useEffect, useState, useRef } from "react";
 
 export function useIsVisible(ref) {
@@ -58,6 +59,7 @@ const MainPage = () => {
                 <div className={`bg-primary ${style.paddingX} ${style.flexCenter}`}>
                     <div ref={ref3} className={`${style.boxWidth} transition-opacity ease-in duration-700 ${isVisible3 ? "opacity-100" : "opacity-0"}`}>
                         <StatistikPreview />
+                        <Footer />
                     </div>
                 </div>
             </div>

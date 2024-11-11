@@ -59,7 +59,7 @@ const Navbar = () => {
         className={`${style.paddingX} w-full flex justify-center ${
           style.nempelAtas
         } transition-colors duration-300 z-50 ${
-          scrolled ? "bg-navbar-gradient" : "bg-black"
+          scrolled ? "bg-navbar-gradient" : "bg-[#050505]"
         }`}
       >
         <div className={`${style.boxWidth}`}>

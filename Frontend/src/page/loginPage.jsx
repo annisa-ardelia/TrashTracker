@@ -1,7 +1,7 @@
 import style from "../style";
 import Navbar from "../components/Navbar";
 import Login from "../components/login";
-// import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const LoginPage = () => {
     return (
@@ -16,7 +16,7 @@ const LoginPage = () => {
 
             <div className={`bg-primary ${style.paddingX} ${style.flexCenter} flex-col md:absolute md:bottom-0 w-screen`}>
                 <div className={`${style.boxWidth}`}>
-                    {/* <Footer /> */}
+                    <Footer />
                 </div>
             </div>
         </div>
