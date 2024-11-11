@@ -162,21 +162,6 @@
   opacity: 1;
 }
 
-.navbar{
-  color: #fafafa;
-  font-style: normal;
-}
-
-.navbar:hover{
-  color: #fafafa;
-  font-style: bold;
-}
-
-.hero-background {
-  background-image: url(./assets/map-putih.png);
-  object-fit: ;
-}
-
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(100px);
