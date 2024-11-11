@@ -4,7 +4,7 @@ import map from '../assets/map-putih.png';
 const hero = () => {
 
     return (
-        <div className="pt-28 pb-28">
+        <div className="pl-16 pt-28 pb-28 overflow-hidden">
             <div className="absolute mt-24">
                 <h1 className="text-white text-6xl font-bold mb-4 center">Cek sini dulu</h1>
                 <h1 className="text-white text-6xl font-bold mb-4 center">sebelum angkut sampah!!</h1>
