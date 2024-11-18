@@ -1,20 +1,29 @@
 const express = require('express');
-const { pool } = require('./config.js');
 const cors = require('cors');
+const bp = require('body-parser');
+// const jwt = require('jsonwebtoken');
 
-const bodyParser = require('body-parser');
-const port = process.env.PORT;
+const Routes = require('./src/routes');
+const db = require('./src/db');//mundur 2 kali
+
 const app = express();
+const port = 3001;
 
-// Body parser middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
 app.use(cors());
-
-pool.connect(() => {
-    console.log("Connected to database");
-});
+app.options("*", cors());
 
 app.listen(port, () => {
-    console.log('Server is running and listening on port', port);
+    console.log(`Server listening on port ${port}`);
+  });
+
+db.connect((err) => {
+    if (err) {
+      console.error("Error connecting to database", err);
+      return;
+    }
+    console.log("Database connected");
 });
+
+app.use('/', Routes);
