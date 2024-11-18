@@ -59,10 +59,10 @@ const Login = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen pb-24">
+        <div className="flex justify-center items-center h-screen pb-48">
             <section id="login" className={`flex md:flex-row flex-col ${styles.paddingX}`}>
                 <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 flex justify-center items-center`}>
-                    <h1 className="font-poppins font-semibold text-[55px] text-white leading-[100.8px] mb-8">
+                    <h1 className="font-poppins font-semibold text-[55px] text-white mb-8">
                         <span className="">Login</span>
                     </h1>
                     <Box
