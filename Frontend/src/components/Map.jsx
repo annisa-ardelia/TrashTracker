@@ -8,8 +8,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -6.200000, // Latitude Jakarta
-  lng: 106.816666, // Longitude Jakarta
+  lat: -6.361133, // Latitude uwiw
+  lng: 106.827246, // Longitude uwiw
 };
 
 const Map = () => {
@@ -70,16 +70,19 @@ const Map = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-start">
-      <h1 className="font-poppins font-semibold text-white text-center text-[55px] justify-center mb-12 pt-16">
-        <span className="text-whitet">Trash Locations</span>
+      <h1 className="font-poppins text-center text-[55px] justify-center mb-12 pt-16">
+        <span className="text-gradient font-bold text-[55px]">MAPS VIEW</span><br></br>
       </h1>
+      <h2 className="font-poppins text-center text-[20px] justify-center -mt-12 mb-12">
+        <span className="text-white text-[20px] font-semibold">Universitas Indonesia</span>
+      </h2>
 
       <div className="flex-grow w-full">
         <LoadScript googleMapsApiKey={apiKey}>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={12}
+            zoom={15}
             onLoad={onMapLoad}
           >
             {/* Tambahkan marker dengan custom icon */}

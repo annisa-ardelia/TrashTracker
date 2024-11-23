@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-const SampahBarChart = ({ tempatSampahId }) => {
+const SampahBarChart = ({ tempatSampahId, nama, fakultas }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -28,10 +28,17 @@ const SampahBarChart = ({ tempatSampahId }) => {
   }, [tempatSampahId]);
 
   return (
-    <div className="flex justify-center items-center p-8">
+    <div className="flex flex-col justify-center items-center p-8">
+      <h1 className="font-poppins text-center text-[55px] justify-center mb-12 pt-16">
+        <span className="text-gradient font-bold text-[55px]">{nama}</span><br></br>
+      </h1>
+      <h2 className="font-poppins text-center text-[20px] justify-center -mt-12 mb-12">
+        <span className="text-white text-[20px] font-semibold">Fakultas {fakultas}</span>
+      </h2>
+
       <div className="w-full max-w-3xl bg-white rounded-lg shadow-md p-4">
         <h2 className="text-center text-xl font-semibold mb-4">
-          Jumlah Sampah Harian (ID: {tempatSampahId})
+          Data Sampah 10 Hari Terakhir
         </h2>
 
         {data.length > 0 ? (

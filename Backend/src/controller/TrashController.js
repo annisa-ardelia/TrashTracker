@@ -35,7 +35,7 @@ const getTrashData = async (req, res) => {
 
         // Jika tidak ada data
         if (result.rows.length === 0) {
-            return res.status(404).json({ message: `No trash data found for place with id ${id} today` });
+            return res.status(404).json({ message: `Belum ada sampah hari ini` });
         }
 
         // Menyusun data untuk mengembalikan response
@@ -83,7 +83,7 @@ const getDailyTrashData = async (req, res) => {
 
         // Jika tidak ada data
         if (result.rows.length === 0) {
-            return res.status(404).json({ message: `No trash data found for place with id ${id} in the last 10 days` });
+            return res.status(404).json({ message: `Belum ada sampah 10 hari terakhir` });
         }
 
         // Menyusun data untuk mengembalikan response
