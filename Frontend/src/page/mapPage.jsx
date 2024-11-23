@@ -1,21 +1,25 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 import Map from '../components/Map';
+import TempatSampahList from '../components/TempatSampahList';
 import style from '../style';
 
 const MapPage = () => {
   return (
-    <div className="bg-primary min-h-screen flex flex-col">
-      {/* Navbar */}
-      <div className="pt-9">
-        <Navbar />
-      </div>
+    <div className="bg-primary w-full relative pt-9">
+      <Navbar />
 
       {/* Konten Utama */}
       <div className={`flex-grow flex flex-col items-center justify-center ${style.flexStart}`}>
         <div className={`${style.boxWidth} w-full`}>
           <Map />
+        </div>
+      </div>
+
+      <div className={`flex-grow flex flex-col items-center justify-center ${style.flexStart}`}>
+        <div className={`${style.boxWidth} w-full`}>
+          <TempatSampahList />
         </div>
       </div>
 

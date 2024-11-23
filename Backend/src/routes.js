@@ -12,10 +12,13 @@ router.post("/RegisterAdmin", AdminController.Register);
 //untuk Login
 router.post("/LoginAdmin", AdminController.Login);
 
+// untuk menagmbil data tempat sampah
+router.get("/TempatSampah", TrashController.getTempatSampah);
+
 //untuk mengambil data sambah
-router.get("/JumlahSampah", TrashController.getTrashData);
+router.get("/JumlahSampah/:id", TrashController.getTrashData);
 
 //untuk mengambil data sampah harian
-router.get("/DailySampah", TrashController.getDailyTrashData);
+router.get("/DailySampah/:id", TrashController.getDailyTrashData);
 
 module.exports = router;

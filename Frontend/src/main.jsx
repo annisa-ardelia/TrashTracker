@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom/client';
 import MainPage from './page/mainpage.jsx';
 import MapPage from './page/mapPage.jsx';
 import LoginPage from './page/loginPage.jsx';
+import DataPage from './page/dataPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route index element={<MainPage />} />
       <Route path='map' element={<MapPage />} />
       <Route path='login' element={<LoginPage />} />
+      <Route path='sampah/:id' element={<DataPage />} />
     </Route>
   )
 );

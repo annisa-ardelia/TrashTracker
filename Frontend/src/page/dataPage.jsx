@@ -1,23 +1,29 @@
-import style from "../style";
+import React from 'react';
+import { useParams } from 'react-router-dom'; // Mengambil ID dari URL
+import SampahBarChart from "../components/barChart";
+import SampahPieChart from "../components/pieChart";
 import Navbar from "../components/Navbar";
-import BarChart from "../components/barChart";
-import PieChart from "../components/pieChart";
 import Footer from "../components/footer";
+import style from "../style";
 
 const DataPage = () => {
+    const { id } = useParams(); // Mengambil ID dari URL
+
     return (
         <div className="bg-primary w-full relative pt-9">
             <Navbar />
 
-            <div className={`bg-primary${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
+            <div className={`bg-primary ${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
                 <div className={`${style.boxWidth}`}>
-                    <BarChart />
+                    {/* Mengirimkan ID ke komponen BarChart */}
+                    <SampahBarChart tempatSampahId={id} />
                 </div>
             </div>
 
-            <div className={`bg-primary${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
+            <div className={`bg-primary ${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
                 <div className={`${style.boxWidth}`}>
-                    <PieChart />
+                    {/* Mengirimkan ID ke komponen PieChart */}
+                    <SampahPieChart tempatSampahId={id} />
                 </div>
             </div>
 
@@ -27,7 +33,7 @@ const DataPage = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default DataPage;
