@@ -29,6 +29,7 @@ CREATE TABLE sampah (
 );
 
 -- Dummy data
+-- untuk tempat sampah
 INSERT INTO tempat_sampah (nama, fakultas, latitude, longitude)
 VALUES
 ('Tempat Sampah Teknik', 'Teknik', -6.891, 107.610),
@@ -36,6 +37,7 @@ VALUES
 ('Tempat Sampah FISIP', 'FISIP', -6.892, 107.609),
 ('Tempat Sampah Kedokteran', 'Kedokteran', -6.893, 107.608);
 
+-- untuk data sampah
 INSERT INTO sampah (tanggal, jenis_sampah, jumlah_sampah, tempat_sampah_id)
 VALUES
 ('2024-11-20', 'basah', 15, 1),

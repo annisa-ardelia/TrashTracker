@@ -10,6 +10,7 @@ import MainPage from './page/mainpage.jsx';
 import MapPage from './page/mapPage.jsx';
 import LoginPage from './page/loginPage.jsx';
 import DataPage from './page/dataPage.jsx';
+import DataManagementPage from './page/dataManagementPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path='map' element={<MapPage />} />
       <Route path='login' element={<LoginPage />} />
       <Route path='sampah/:id' element={<DataPage />} />
+      <Route path='DataManagement' element={<DataManagementPage />} />
     </Route>
   )
 );

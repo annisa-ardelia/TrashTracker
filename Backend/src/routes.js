@@ -12,6 +12,15 @@ router.post("/RegisterAdmin", AdminController.Register);
 //untuk Login
 router.post("/LoginAdmin", AdminController.Login);
 
+// untuk menambahkan tempat sampah
+router.post("/AddTempatSampah", TrashController.addTempatSampah);
+
+// untuk menghapus tempat sampah
+router.delete("/DeleteTempatSampah/:id", TrashController.deleteTempatSampah);
+
+// untuk mengedit tempat sampah
+router.put("/EditTempatSampah/:id", TrashController.editTempatSampah);
+
 // untuk menagmbil data tempat sampah
 router.get("/TempatSampah", TrashController.getTempatSampah);
 
@@ -20,5 +29,8 @@ router.get("/JumlahSampah/:id", TrashController.getTrashData);
 
 //untuk mengambil data sampah harian
 router.get("/DailySampah/:id", TrashController.getDailyTrashData);
+
+// untuk menambahkan data sampah
+router.post("/AddSampah", TrashController.addDataSampah);
 
 module.exports = router;
