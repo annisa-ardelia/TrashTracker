@@ -1,4 +1,4 @@
-const db = require('../db'); // Pastikan ini sesuai dengan konfigurasi database kamu
+const db = require('../database/db'); // Pastikan ini sesuai dengan konfigurasi database kamu
 
 // Fungsi untuk menambahkan tempat sampah
 const addTempatSampah = async (req, res) => {

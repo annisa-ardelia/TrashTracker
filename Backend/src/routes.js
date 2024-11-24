@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const AdminController = require("./controller/AdminController");
 const TrashController = require("./controller/TrashController");
+const TrashController = require("./controller/SensorController");
 const router = Router();
 
 //untuk cek database admin
@@ -32,5 +33,11 @@ router.get("/DailySampah/:id", TrashController.getDailyTrashData);
 
 // untuk menambahkan data sampah
 router.post("/AddSampah", TrashController.addDataSampah);
+
+// Route to fetch all sensor data
+router.get('/AllSensorData', GetAllSensors);
+
+// Route to fetch the latest sensor data
+router.get('/LatestSensorData', GetLatestSensor);
 
 module.exports = router;

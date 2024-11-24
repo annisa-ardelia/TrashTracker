@@ -1,4 +1,4 @@
-const db = require('../db');//mundur 2 kali
+const db = require('../database/db');//mundur 2 kali
 const bcrypt = require('bcrypt');
     
 //Cek Database
