@@ -63,7 +63,7 @@ const Login = () => {
             <section id="login" className={`flex md:flex-row flex-col ${styles.paddingX}`}>
                 <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 flex justify-center items-center`}>
                     <h1 className="font-poppins font-semibold text-[55px] text-white mb-8">
-                        <span className="">Login</span>
+                        <span className="text-gradient">Login</span>
                     </h1>
                     <Box
                         component="form"
@@ -107,7 +107,7 @@ const Login = () => {
                                     },
                                 }
                             }}
-                            sx={{ paddingBottom: '8px'}}
+                            sx={{ paddingBottom: '8px' }}
                         />
                         <TextField
                             id="password"
@@ -140,32 +140,32 @@ const Login = () => {
                                         <IconButton
                                             onClick={handleClickShowPassword}
                                             edge="end"
-                                            sx={{ color: 'white' }}
+                                            sx={{ color: 'white', '&:hover': { color: 'gray' } }}
                                         >
                                             {showPassword ? <VisibilityOff /> : <Visibility />}
                                         </IconButton>
                                     </InputAdornment>
                                 )
                             }}
-                            sx={{ paddingBottom: '8px'}}
+                            sx={{ paddingBottom: '8px' }}
                         />
                         <Button
                             type="submit"
                             variant="contained"
-                            color="primary"
-                            sx={{ 
-                                mt: 2, 
-                                backgroundColor: '#1591ea', 
-                                '&:hover': { backgroundColor: '#00008a' },
+                            sx={{
+                                mt: 2,
+                                backgroundColor: '#FAFAFA', // Warna tombol sebelum hover
+                                color: 'black', // Warna font sebelum hover
+                                '&:hover': { backgroundColor: '#35D5E7'},
                                 padding: '12px 24px',
                             }}
                         >
                             Sign in
                         </Button>
                     </Box>
-                    <p className="mt-4 text-white mb-4">
+                    {/* <p className="mt-4 text-white mb-4">
                         Don't have an account? <a href="/Register" className="text-blue-500 hover:text-blue-700">Sign Up</a>
-                    </p>
+                    </p> */}
                 </div>
             </section>
             <ToastContainer toasts={toasts} removeToast={removeToast} />

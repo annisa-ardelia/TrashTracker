@@ -25,22 +25,34 @@ const TempatSampahList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div className="min-h-screen bg-primary p-8">
+      
+      <h1 className="font-poppins text-center text-[55px] justify-center mb-12">
+        <span className="text-white font-bold text-[55px]">Daftar Tempat Sampah</span><br></br>
+      </h1>
+      {/* <h2 className="font-poppins text-center text-[20px] justify-center -mt-12 mb-8">
+        <span className="text-white text-[20px] font-semibold">Universitas Indonesia</span>
+      </h2> */}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
         {tempatSampah.map((tempat) => (
           <div
             key={tempat.id}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="bg-primary border-white-100 border-solid border-2 p-6 rounded-lg shadow-md hover:shadow-white hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
           >
-            <h2 className="text-xl font-semibold mb-2">No. {tempat.id}</h2>
-            <p className="text-gray-700"><strong>Nama:</strong> {tempat.nama}</p>
-            <p className="text-gray-700"><strong>Fakultas:</strong> {tempat.fakultas}</p>
+            {/* Konten di tengah card */}
+            <div className="flex-grow flex flex-col justify-center items-center text-center">
+              <h2 className="font-poppins text-white text-xl font-semibold mb-2">{tempat.nama}</h2>
+              <p className="text-gray-400"> Fakultas {tempat.fakultas}</p>
+            </div>
+  
+            {/* Tombol di bagian bawah */}
             <div className="mt-4">
               <button
                 onClick={() => handleViewChart(tempat.id)}
-                className="w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                className="w-full py-2 text-black rounded-lg bg-button hover:font-bold"
               >
-                Lihat Grafik
+                See more
               </button>
             </div>
           </div>
@@ -48,6 +60,7 @@ const TempatSampahList = () => {
       </div>
     </div>
   );
+  
 };
 
 export default TempatSampahList;

@@ -1,6 +1,6 @@
 import style from "../style";
 import map from "../assets/map-putih.png";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import Hero from "../components/hero";
 import MapPreview from "../components/mapPreview";
 import StatistikPreview from "../components/statistikPreview";
@@ -39,6 +39,29 @@ const MainPage = () => {
 
     const ref3 = useRef();
     const isVisible3 = useIsVisible(ref3);
+
+    let colors = ["#35D5E7"];
+    let i = 0;
+
+    document.onmousemove = function(e) {
+        i++;
+        let x = e.pageX;
+        let y = e.pageY;
+
+        let span = document.createElement("span");
+        span.classList.add("follower");
+        span.style.left = x + "px";
+        span.style.top = y + "px";
+        span.style.backgroundColor = colors[i - 1];
+        document.body.appendChild(span);
+
+        if (i == colors.length) {
+            i = 0;
+        }
+        setTimeout(() => {
+            span.remove();
+        }, 500);
+    };
 
         return (
             <div className="bg-primary w-full relative pt-9">

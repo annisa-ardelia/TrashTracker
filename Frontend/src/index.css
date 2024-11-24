@@ -38,6 +38,18 @@
 
 }
 
+.bg-button{
+  background: #FAFAFA;
+}
+
+.bg-button:hover {
+  background: linear-gradient(90deg,
+      rgb(52, 217, 235) 0%,
+      rgba(250, 250, 250, 1) 100%);
+      /* transition: 0.5s;
+      transition-duration: 300ms; */
+}
+
 .bg-purple-gradient {
   background: linear-gradient(90deg,
       rgba(56, 0, 60, 1) 0%,
@@ -164,6 +176,29 @@
 
 .button:hover::before {
   opacity: 1;
+}
+
+.follower{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  pointer-events: none;
+  border-radius: 50%;
+  animation-name: follower_animation;
+  animation-duration: 1s;
+}
+
+@keyframes follower_animation {
+  from{
+    opacity: 1;
+    transform: scale(0);
+  }
+  to{
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 
 @-webkit-keyframes slide-top {
