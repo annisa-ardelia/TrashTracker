@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/hero";
 import MapPreview from "../components/mapPreview";
 import StatistikPreview from "../components/statistikPreview";
+import Team from "../components/team";
 import Footer from "../components/footer";
 import { useEffect, useState, useRef } from "react";
 
@@ -39,6 +40,9 @@ const MainPage = () => {
 
     const ref3 = useRef();
     const isVisible3 = useIsVisible(ref3);
+
+    const ref4 = useRef();
+    const isVisible4 = useIsVisible(ref3);
 
     let colors = ["#35D5E7"];
     let i = 0;
@@ -82,9 +86,16 @@ const MainPage = () => {
                 <div className={`bg-primary ${style.paddingX} ${style.flexCenter}`}>
                     <div ref={ref3} className={`${style.boxWidth} transition-opacity ease-in duration-700 ${isVisible3 ? "opacity-100" : "opacity-0"}`}>
                         <StatistikPreview />
+                    </div>
+                </div>
+
+                <div className={`bg-primary ${style.paddingX} ${style.flexCenter}`}>
+                    <div ref={ref3} className={`${style.boxWidth} transition-opacity ease-in duration-700 ${isVisible3 ? "opacity-100" : "opacity-0"}`}>
+                        <Team />
                         <Footer />
                     </div>
                 </div>
+
             </div>
         );
     };
