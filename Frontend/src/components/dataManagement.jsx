@@ -92,7 +92,7 @@ const DataManagement = () => {
     setFormData({
       nama: tempatSampah.nama,
       fakultas: tempatSampah.fakultas,
-      tempatSampahId: tempatSampah.tempatSampahId,
+      tempatSampahId: tempatSampah.id,
       latitude: tempatSampah.latitude,
       longitude: tempatSampah.longitude,
     });
@@ -104,19 +104,19 @@ const DataManagement = () => {
       const response = await fetch(`http://localhost:3001/DeleteTempatSampah/${tempatSampahId}`, {
         method: 'DELETE',
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to delete tempat sampah');
       }
-
+  
       await fetchTempatSampah(); // Refresh daftar tempat sampah setelah delete
-
+  
       addToast('success', 'Tempat Sampah berhasil dihapus');
     } catch (error) {
       console.error('Error deleting tempat sampah:', error);
       addToast('error', 'Gagal menghapus tempat sampah');
     }
-  };
+  };  
 
   if (loading) {
     return <p>Loading data...</p>;
@@ -214,7 +214,7 @@ const DataManagement = () => {
                   Edit
                 </button>
                 <button
-                  onClick={() => handleDelete(tempatSampah.tempatSampahId)}
+                  onClick={() => handleDelete(tempatSampah.id)}
                   className="bg-red-500 text-white px-4 py-2 rounded"
                 >
                   Hapus

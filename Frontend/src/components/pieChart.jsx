@@ -79,7 +79,7 @@ const SampahPieChart = ({ tempatSampahId }) => {
             Total Sampah: {totalSampah} items
           </p>
           <p className={`text-lg font-semibold ${statusSampah === "Low" ? "text-green-500" : statusSampah === "Medium" ? "text-yellow-500" : "text-red-500"}`}>
-            Status: {statusSampah}
+            {statusSampah}
           </p>
         </div>
 

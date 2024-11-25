@@ -102,7 +102,7 @@ const editTempatSampah = async (req, res) => {
 // Fungsi untuk mengambil data tempat sampah
 const getTempatSampah = async (req, res) => {
     try {
-      const result = await db.query('SELECT * FROM tempat_sampah');
+      const result = await db.query('SELECT * FROM tempat_sampah ORDER BY id ASC');
       const tempatSampah = result.rows;
   
       res.status(200).json(tempatSampah);
@@ -110,7 +110,7 @@ const getTempatSampah = async (req, res) => {
       console.error('Error fetching tempat sampah:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-  };
+  };  
 
 // Fungsi untuk mengambil jumlah sampah basah dan kering pada hari ini untuk tempat sampah berdasarkan id
 const getTrashData = async (req, res) => {
