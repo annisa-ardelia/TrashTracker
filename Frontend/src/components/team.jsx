@@ -19,7 +19,7 @@ const Team = () => {
           <img
             src={foto}
             alt="Team Members"
-            className="w-full rounded-lg shadow-lg"
+            className="w-full rounded-lg ml-4 shadow-lg"
           />
 
           {/* Info Section */}
