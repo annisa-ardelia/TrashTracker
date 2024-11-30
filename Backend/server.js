@@ -4,7 +4,7 @@ const bp = require('body-parser');
 // const jwt = require('jsonwebtoken');
 
 const Routes = require('./src/routes');
-const db = require('./src/db');//mundur 2 kali
+const db = require('./src/database/db');//mundur 2 kali
 
 const app = express();
 const port = 3001;
