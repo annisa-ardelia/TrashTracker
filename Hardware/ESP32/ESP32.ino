@@ -13,7 +13,7 @@ int potPin = 34; // ESP32 menggunakan pin ADC seperti 34 atau 35
 int soil = 0;
 int fsoil;
 int maxDryValue = 1;      // Nilai kelembapan untuk menentukan jenis sampah
-int Ultra_Distance = 15;  // Jarak sensor ultrasonik ke sensor kelembapan dalam cm
+int Ultra_Distance = 25;  // Jarak sensor ultrasonik ke sensor kelembapan dalam cm
 
 // Additional ultrasonic sensors
 #define TRIG_PIN1 5   // Trigger Pin for Sensor 1
@@ -51,10 +51,10 @@ float measureDistance(uint8_t trigPin, uint8_t echoPin) {
   float distance = (duration * 0.034) / 2; // Convert time to distance in cm
 
   // Handle invalid readings
-  if (distance > 40) {
+  if (distance > 35) {
     distance = 0; // Cap the distance to 0 cm if it exceeds
   } else {
-    distance = 40 - distance; // Adjust distance based on the new formula
+    distance = 35 - distance; // Adjust distance based on the new formula
   }
 
   return distance;
@@ -118,12 +118,12 @@ void loop() {
     if (fsoil > maxDryValue) {
       delay(1000);
       Serial.println("\nGarbage Detected! WET");
-      servo1.write(160);
+      servo1.write(180);
       delay(3000);
     } else {
       delay(1000);
       Serial.println("\nGarbage Detected! DRY");
-      servo1.write(20);
+      servo1.write(0);
       delay(3000);
     }
     servo1.write(90);
@@ -136,8 +136,9 @@ void loop() {
   float distance2 = measureDistance(TRIG_PIN2, ECHO_PIN2);
 
   // Calculate percentages
-  float percentage3 = (distance1 * 100) / 40;
-  float percentage4 = (distance2 * 100) / 40;
+  float percentage3 = (distance1 * 100) / 35
+  ;
+  float percentage4 = (distance2 * 100) / 35;
 
   sendval1 = String(distance1); // Convert distance1 to a string
   sendval2 = String(distance2); // Convert distance2 to a string

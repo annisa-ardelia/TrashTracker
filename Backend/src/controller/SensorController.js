@@ -2,7 +2,7 @@ const db = require('../database/sensor_db'); // Import the database connection p
 
 // Get All Sensor Data
 const getAllSensors = async (req, res) => {
-    const query = 'SELECT * FROM sensor_data ORDER BY timestamp ASC';
+    const query = 'SELECT * FROM sensor_dataa ORDER BY timestamp ASC LIMIT 5';
 
     db.query(query, (err, results) => {
         if (err) {
@@ -15,7 +15,7 @@ const getAllSensors = async (req, res) => {
 
 // Get Latest Sensor Data
 const getLatestSensor = async (req, res) => {
-    const query = 'SELECT * FROM sensor_data ORDER BY timestamp DESC LIMIT 1';
+    const query = 'SELECT * FROM sensor_dataa ORDER BY timestamp DESC LIMIT 1';
 
     db.query(query, (err, results) => {
         if (err) {

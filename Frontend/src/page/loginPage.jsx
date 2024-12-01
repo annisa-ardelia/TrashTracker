@@ -5,10 +5,10 @@ import Footer from "../components/footer";
 
 const LoginPage = () => {
     return (
-        <div className="bg-primary w-full relative pt-9">
+        <div className="bg-primary w-full relative pt-9 overflow-hidden">
             <Navbar />
 
-            <div className={`bg-primary${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
+            <div className={`bg-primary${style.flexStart} pt-20 w-full h-full flex flex-row justify-center items-center gap-24`}>
                 <div className={`${style.boxWidth}`}>
                     <Login />
                 </div>

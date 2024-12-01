@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; 
+import BarChartTeknik from "../components/barChartTeknik"; // Make sure to import BarChartTeknik
 import SampahBarChart from "../components/barChart";
 import SampahPieChart from "../components/pieChart";
 import Navbar from "../components/Navbar";
@@ -51,13 +52,16 @@ const DataPage = () => {
     }
 
     return (
-        <div className="bg-primary w-full relative pt-9">
+        <div className="bg-primary w-full relative pt-9 overflow-hidden">
             <Navbar />
 
-            <div className={`bg-primary ${style.flexStart} w-full h-screen flex flex-row justify-center items-center gap-24`}>
+            <div className={`bg-primary ${style.flexStart} w-full h-full flex flex-row justify-center items-center gap-24`}>
                 <div className={`${style.boxWidth}`}>
-                    {/* Mengirimkan ID dan data tempat sampah ke komponen BarChart */}
-                    <SampahBarChart tempatSampahId={id} nama={tempatSampah.nama} fakultas={tempatSampah.fakultas} />
+                    {id === '1' ? (
+                        <BarChartTeknik />
+                    ) : (
+                        <SampahBarChart tempatSampahId={id} nama={tempatSampah.nama} fakultas={tempatSampah.fakultas} />
+                    )}
                 </div>
             </div>
 
