@@ -5,6 +5,7 @@ $username = "root";
 $password = ""; 
 $database = "sensor_db"; 
 
+// Create MySQL connection
 $conn = mysqli_connect($hostname, $username, $password, $database);
 
 if (!$conn) { 
@@ -13,18 +14,22 @@ if (!$conn) {
 
 echo "Database connection is OK<br>";
 
-// Check if the 'sendval' (distance) value is not empty
-if (!empty($_POST['sendval'])) {
-    $distance = $_POST['sendval'];
+// Check if the required POST values are set and not empty
+if (!empty($_POST['sensor1']) && !empty($_POST['sensor2']) && !empty($_POST['percentage3']) && !empty($_POST['percentage4'])) {
+    $distanceWet = $_POST['sensor1'];
+    $distanceDry = $_POST['sensor2'];
+    $percentageWet = $_POST['percentage3'];
+    $percentageDry = $_POST['percentage4'];
 
-    // Insert the new distance value
-    $sql = "INSERT INTO sensor_data(distance) VALUES ($distance)"; 
+    // Insert the new values into the database
+    $sql = "INSERT INTO sensor_dataa (distanceWet, distanceDry, percentageWet, percentageDry) 
+            VALUES ('$distanceWet', '$distanceDry', '$percentageWet', '$percentageDry')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Distance value inserted into the MySQL database table.<br>";
+        echo "Sensor values inserted into the MySQL database table.<br>";
 
         // Cleanup logic: Check the total number of rows
-        $countQuery = "SELECT COUNT(*) AS total FROM sensor_data";
+        $countQuery = "SELECT COUNT(*) AS total FROM sensor_dataa";
         $countResult = $conn->query($countQuery);
         $rowCount = $countResult->fetch_assoc()['total'];
 
@@ -33,7 +38,7 @@ if (!empty($_POST['sendval'])) {
             // Fetch the IDs of the rows to delete
             $excessRows = $rowCount - 20;
             $fetchIdsQuery = "
-                SELECT id FROM sensor_data
+                SELECT id FROM sensor_dataa
                 ORDER BY timestamp ASC
                 LIMIT $excessRows
             ";
@@ -49,7 +54,7 @@ if (!empty($_POST['sendval'])) {
                 $idsString = implode(',', $idsToDelete);
 
                 // Delete the rows with the fetched IDs
-                $deleteQuery = "DELETE FROM sensor_data WHERE id IN ($idsString)";
+                $deleteQuery = "DELETE FROM sensor_dataa WHERE id IN ($idsString)";
                 if ($conn->query($deleteQuery) === TRUE) {
                     echo "$excessRows old rows deleted to maintain table size.<br>";
                 } else {
@@ -61,7 +66,7 @@ if (!empty($_POST['sendval'])) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 } else {
-    echo "No distance value received.";
+    echo "Incomplete data received. Ensure 'sensor1', 'sensor2', 'percentage3', and 'percentage4' are provided.";
 }
 
 // Close MySQL connection

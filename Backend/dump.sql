@@ -59,3 +59,14 @@ VALUES
 ('2024-11-20', 'kering', 18, 4),
 ('2024-11-21', 'basah', 25, 4),
 ('2024-11-21', 'kering', 15, 4);
+
+
+
+--Tabel di database local
+CREATE TABLE `sensor_db`.`sensor_dataa` (
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `distanceWet` FLOAT NOT NULL , 
+    `distanceDry` FLOAT NOT NULL , 
+    `percentageWet` FLOAT NOT NULL , 
+    `percentageDry` FLOAT NOT NULL , 
+    `timestamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
