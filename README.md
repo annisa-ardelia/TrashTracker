@@ -42,13 +42,13 @@ Urban waste is growing, and traditional disposal methods are falling behind. Our
 
 # UML Diagram
 ## Use Case Diagram
-<img height="500" alt="unnamed" src="https://github.com/user-attachments/assets/d6c1ef46-804b-4188-b439-66863f0bd420" />
+<img height="500" alt="unnamed" src="https://github.com/user-attachments/assets/23744f33-9463-47af-aef8-46a8c5194808" />
 
 ## State Diagram
-<img height="800" alt="unnamed" src="https://github.com/user-attachments/assets/2a3b3b57-96b8-4c82-bd54-5b5fdb6f9854" />
+<img height="800" alt="unnamed" src="https://github.com/user-attachments/assets/f41f524d-b7b8-4666-9983-83b7aca9e538" />
 
 ## Activity Diagram
-<img  height="800" alt="unnamed" src="https://github.com/user-attachments/assets/c325e09b-7270-436f-9358-1c8a879e7606" />
+<img  height="800" alt="unnamed" src="https://github.com/user-attachments/assets/50812d40-4298-465b-8e90-73265a350d6d" />
 
 ## Class Diagram
 <img  height="600" alt="unnamed" src="https://github.com/user-attachments/assets/3deeaab8-bb05-4d0b-b54f-fd02f555fdc9" />
@@ -75,8 +75,8 @@ Urban waste is growing, and traditional disposal methods are falling behind. Our
 <img width="1600" height="744" alt="unnamed" src="https://github.com/user-attachments/assets/277d57a9-be83-44f4-92b8-adef4dc62355" />
 
 # Hardware Design
-<img  height="400" alt="unnamed" src="https://github.com/user-attachments/assets/dc1aac1d-7340-4e4a-aa95-86706cfcbdf2" />
-<img  height="400" alt="unnamed" src="https://github.com/user-attachments/assets/cc60f2b7-701f-4b96-8eea-9013729081b9" />
+<img  height="300" alt="unnamed" src="https://github.com/user-attachments/assets/dc1aac1d-7340-4e4a-aa95-86706cfcbdf2" />
+<img  height="500" alt="unnamed" src="https://github.com/user-attachments/assets/cc60f2b7-701f-4b96-8eea-9013729081b9" />
 
 # Sensor Detection
 ### Moisture Sensor Detection
